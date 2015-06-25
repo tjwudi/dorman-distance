@@ -14,7 +14,7 @@ router.get('/', function *(next) {
   let result = yield run('usonic.py', {
     scriptPath: __dirname
   });
-  this.body = { distance: result[0] };
+  this.body = { distance: parseFloat(result[0]) };
   yield next;
 });
 
